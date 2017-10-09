@@ -3,7 +3,8 @@ import React from 'react';
 class AddFishForm extends React.Component {
   createFish(event) {
     event.preventDefault();
-    console.log('GOnna make some fish! 🎣');
+    console.log('Gonna make some fish! 🎣');
+
     const fish = {
       name: this.name.value,
       price: this.price.value,
@@ -11,6 +12,7 @@ class AddFishForm extends React.Component {
       desc: this.desc.value,
       image: this.image.value,
     }
+
     this.props.addFish(fish);
     this.fishForm.reset();
   }
@@ -30,10 +32,10 @@ class AddFishForm extends React.Component {
       </form>
     )
   }
+
+  static propTypes = {
+    addFish: React.PropTypes.func.isRequired
+  }
 }
 
-AddFishForm.propTypes = {
-  addFish: React.PropTypes.func.isRequired
-}
-
-export default AddFishForm;
+export default AddFishForm
